@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rmproject"
+version = "0.0.1"
+description = "Package for getting hottest city by year"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pandas"
+]
+
+[tool.setuptools]
+packages = ["rmproject"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [
+    "tests",
+]
+
+[tool.isort]
+profile = "black"
+src_paths = ["rmproject", "tests"]
+
+[tool.black]
+skip-string-normalization = true
+
+[tool.mypy]
+python_version = "3.9"
+disallow_untyped_defs = true
+disallow_incomplete_defs = false
+follow_imports = "normal"
+ignore_missing_imports = true
+pretty = true
+show_column_numbers = true
+show_error_codes = true
+warn_no_return = true
+warn_unused_ignores = true
